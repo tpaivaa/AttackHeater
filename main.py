@@ -6,7 +6,7 @@ from asyncDisplay import AsyncWriteTemp
 from asyncRelePins import AsyncRelePins
 from asyncHeating import AsyncHeating
 from asyncMessager import AsyncMqttMessages
-#import paawodyfi as w
+import paawodyfi as w
 
 async def killer():
 	pin = Pin(14, Pin.IN, Pin.PULL_UP)
@@ -14,7 +14,7 @@ async def killer():
 		await asyncio.sleep_ms(50)
 
 try:
-	#w.connect()
+	w.connect()
 	while True:
 		d = AsyncWriteTemp()
 		t = OneWireTemps(d)

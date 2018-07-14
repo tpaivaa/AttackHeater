@@ -13,8 +13,8 @@ class AsyncMqttMessages(object):
 		self.tempMessage = {'TempIN':'', 'TempOUT':''}
 		self.mqttID = config.mqttID
 		self.mqttBroker = config.mqttBroker
-		self.user = config.mqttuser
-		self.password = config.mqttpassword
+		self.user = config.mqttUser
+		self.password = config.mqttPassword
 		self.client = MQTTClient(self.mqttID, self.mqttBroker, self.user, self.password, port=1883)
 		self.client.connect()
 		self.client.set_callback(sub_cb)
