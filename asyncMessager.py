@@ -1,6 +1,7 @@
 import uasyncio as asyncio
 from umqtt.robust import MQTTClient
 import ujson
+import config
 
 def sub_cb(topic, msg):
 	if (topic == "home/attackHeater/stat"):
@@ -10,10 +11,10 @@ class AsyncMqttMessages(object):
 	def __init__(self):
 		self.heatmessage = {'Heating':''}
 		self.tempMessage = {'TempIN':'', 'TempOUT':''}
-		self.mqttID = "attacHeater"
-		self.mqttBroker = "10.10.10.2"
-		self.user = "attack"
-		self.password = "passu1"
+		self.mqttID = config.mqttID
+		self.mqttBroker = config.mqttBroker
+		self.user = config.mqttuser
+		self.password = config.mqttpassword
 		self.client = MQTTClient(self.mqttID, self.mqttBroker, self.user, self.password, port=1883)
 		self.client.connect()
 		self.client.set_callback(sub_cb)
