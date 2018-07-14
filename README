@@ -1,0 +1,23 @@
+Paketit 1.5.2018 _::_
+
+ampy -p /dev/tty.SLAB_USBtoUART ls
+
+main.py
+asyncDisplay.py
+asyncRelePins.py
+asynctempSensor.py
+asyncHeating.py
+asyncMessager.py
+asyn.py
+esp8266_i2c_lcd.py
+lcd_api.py
+
+ampy -p /dev/tty.SLAB_USBtoUART put esp8266_i2c_lcd.py 
+ampy -p /dev/tty.SLAB_USBtoUART put lcd_api.py
+ampy -p /dev/tty.SLAB_USBtoUART put main.py
+ampy -p /dev/tty.SLAB_USBtoUART put asyncDisplay.py
+ampy -p /dev/tty.SLAB_USBtoUART put asyncRelePins.py
+ampy -p /dev/tty.SLAB_USBtoUART put asynctempSensor.py
+ampy -p /dev/tty.SLAB_USBtoUART put asyncHeating.py
+ampy -p /dev/tty.SLAB_USBtoUART put asyn.py
+ampy -p /dev/tty.SLAB_USBtoUART put asyncMessager.py
