@@ -1,3 +1,18 @@
+
+AttackHeater
+
+safety [ D34, D35 ]
+button D14
+SDA	D12
+SCL D13
+
+Relays { 8: D18, 7: D19, 6: D21, 5: D22 }
+
+1Wire D25
+
+Heating control  D26
+
+
 Paketit 14.7.2018 _::_
 
 ampy -p /dev/tty.SLAB_USBtoUART ls

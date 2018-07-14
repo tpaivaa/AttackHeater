@@ -6,7 +6,7 @@ from asyncDisplay import AsyncWriteTemp
 from asyncRelePins import AsyncRelePins
 from asyncHeating import AsyncHeating
 from asyncMessager import AsyncMqttMessages
-import paawodyfi as w
+import paawodyfi as wlan
 
 async def killer():
 	pin = Pin(14, Pin.IN, Pin.PULL_UP)
@@ -14,13 +14,13 @@ async def killer():
 		await asyncio.sleep_ms(50)
 
 try:
-	w.connect()
+	wlan.connect()
 	while True:
 		d = AsyncWriteTemp()
 		t = OneWireTemps(d)
 		arp = AsyncRelePins(d)
-		#asm = AsyncMqttMessages()
-		h = AsyncHeating(arp, d)
+		asm = AsyncMqttMessages()
+		h = AsyncHeating(arp, d, asm)
 		loop = asyncio.get_event_loop()
 		loop.run_until_complete(killer())
 
