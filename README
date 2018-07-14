@@ -1,4 +1,4 @@
-Paketit 1.5.2018 _::_
+Paketit 14.7.2018 _::_
 
 ampy -p /dev/tty.SLAB_USBtoUART ls
 
@@ -11,6 +11,7 @@ asyncMessager.py
 asyn.py
 esp8266_i2c_lcd.py
 lcd_api.py
+config.py
 
 ampy -p /dev/tty.SLAB_USBtoUART put esp8266_i2c_lcd.py 
 ampy -p /dev/tty.SLAB_USBtoUART put lcd_api.py
@@ -21,3 +22,4 @@ ampy -p /dev/tty.SLAB_USBtoUART put asynctempSensor.py
 ampy -p /dev/tty.SLAB_USBtoUART put asyncHeating.py
 ampy -p /dev/tty.SLAB_USBtoUART put asyn.py
 ampy -p /dev/tty.SLAB_USBtoUART put asyncMessager.py
+ampy -p /dev/tty.SLAB_USBtoUART put config.py
