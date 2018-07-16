@@ -53,6 +53,15 @@ class AsyncWriteTemp():
 		self.lcd.move_to(13, 0)
 		self.lcd.putstr(self.on)
 
+	def counter(self, count):
+		self.lcd.move_to(14, 1)
+		self.lcd.putstr(count)
+
+	def highvoltageState(self, state1, state2):
+		self.lcd.move_to(11, 1)
+		self.lcd.putstr(state1)
+		self.lcd.putstr(state2)
+
 	def writeTemps(self,temps):
 		self.temps = temps
 	def lightsOFF(self):

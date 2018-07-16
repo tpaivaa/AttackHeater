@@ -16,13 +16,13 @@ async def killer():
 try:
 	wlan.connect()
 	while True:
-		d = AsyncWriteTemp()
-		t = OneWireTemps(d)
-		arp = AsyncRelePins(d)
-		asm = AsyncMqttMessages()
-		h = AsyncHeating(arp, d, asm)
-		loop = asyncio.get_event_loop()
-		loop.run_until_complete(killer())
+		d = AsyncWriteTemp() 				# writes temps to display
+		t = OneWireTemps(d) 				# gets temps from sensors
+		arp = AsyncRelePins(d) 				# control of relay's
+		asm = AsyncMqttMessages()			# mqtt messages
+		h = AsyncHeating(arp, d, asm)		# control of Heating
+		loop = asyncio.get_event_loop()		# Eventloop
+		loop.run_until_complete(killer())	# run until button pushed (reset)
 
 except Exception as e:
 	d.write('Heating interupted!')

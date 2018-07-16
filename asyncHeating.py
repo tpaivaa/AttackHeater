@@ -2,10 +2,10 @@ import uasyncio as asyncio
 
 
 class AsyncHeating(object):
-	def __init__(self, arp, d):
+	def __init__(self, arp, d, asm):
 		self.arp = arp
 		self.d = d
-		#self.asm = asm
+		self.asm = asm
 		self.heat = not(self.arp.heatingPin.value())
 		self.safety = self.arp.safety1.value() & self.arp.safety2.value()
 		loop = asyncio.get_event_loop()
